@@ -38,7 +38,7 @@ else:
     print (f"Stopping distance: {distance_cm:.2f} cm") 
 #We prevent dividing by 0 because division by 0 is undefined. If deceleration is 0, it means the robot never slows down --> never stops
 # ".2f" means "display the distance with 2 decimal places"
-#stopping distance increases with the sqauer of speed, meaning that if speed doubles, stopping distance becomes 4 times larger.
+#stopping distance increases with the square of speed, meaning that if speed doubles, stopping distance becomes 4 times larger.
 
 obstacle_distance_cm = float(input("Enter obstacle distance(cm)"))
 collision = False
@@ -71,7 +71,7 @@ if collision:
     plt.plot(t[collision_index:], 
              x_cm[collision_index:],
              color='red',
-             linestyle='--')
+             linestyle='--') #the trahectory it would have followed if it hadn't crashed
     plt.scatter(t[collision_index], 
              x_cm[collision_index],
              color='red', s=100) #collision point
